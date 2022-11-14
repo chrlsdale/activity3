@@ -1,0 +1,215 @@
+<html>
+
+<title>Order Form</title>
+
+<link rel="stylesheet" href="style.css">
+
+<br><br><br>
+
+<body>
+
+<div class="container">
+	
+
+  <form action="/action_page.php" align = "center">
+  <hr>
+	<h1 align = "center"><font size="6">Menu</h1>
+	
+	<hr>
+	
+	<div>
+
+	
+	
+	<table>
+	<tr style="font-size:30px"><th colspan = "2">Breakfast</th></tr>
+	
+	<tr>
+	<td><img src="images/bfast1.jpg" height="125px"></td>
+	<td><input type="checkbox" id="bfast1" value="55">
+    <label for="bfast1">Tapsilog - 55 PHP</label></td>
+	</tr>
+	
+	<tr>
+	<td><img src="images/bfast2.jpg"  height="125px"></td>
+	<td><input type="checkbox" id="bfast2" value="55">
+    <label for="bfast2">Tosilog - 55 PHP</label></td>
+	</tr>
+	
+	<tr>
+	<td><img src="images/bfast3.jpg"  height="125px"></td>
+	<td><input type="checkbox" id="bfast3" value="50">
+    <label for="bfast3">Hamsilog - 50 PHP</label></td>
+	</tr>
+	</table>
+	<br>
+	</div>
+	
+	<hr>
+	
+	<div>
+	<table>
+	<tr style="font-size:30px"><th colspan = "2">Lunch</th></tr>
+	
+	<tr>
+	<td><img src="images/lunch1.jpg"  height="125px"></td>
+	<td><input type="checkbox" id="bfast1" value="70">
+    <label for="lunch1">Adobo - 70 PHP</label></td>
+	</tr>
+	
+	<tr>
+	<td><img src="images/lunch2.jpg"  height="125px"></td>
+	<td><input type="checkbox" id="bfast2" value="70">
+    <label for="lunch2">Lechon - 70 PHP</label></td>
+	</tr>
+	
+	<tr>
+	<td><img src="images/lunch3.jpg"  height="125px"></td>
+	<td><input type="checkbox" id="bfast3" value="70">
+    <label for="lunch3">Sisig - 70 PHP</label></td>
+	</tr>
+	
+	<tr>
+	<td><img src="images/lunch4.jpg"  height="125px"></td>
+	<td><input type="checkbox" id="bfast4" value="65">
+    <label for="lunch4">Crispy Pata - 65 PHP</label></td>
+	</tr>
+	
+	<tr>
+	<td><img src="images/lunch5.jpg"  height="125px"></td>
+	<td><input type="checkbox" id="bfast5" value="65">
+    <label for="lunch5">Chicken Inasal - 65 PHP</label></td>
+	</tr>
+	</table>
+	
+	</div>
+	
+	<hr>
+	
+	<div>
+	<table>
+	<tr style="font-size:30px"><th colspan = "2">Dinner</th></tr>
+	
+	<tr>
+	<td><img src="images/dinner1.jpg"  height="125px"></td>
+	<td><input type="checkbox" id="dinner1" value="70">
+    <label for="dinner1">Kare-Kare - 70 PHP</label></td>
+	</tr>
+	
+	<tr>
+	<td><img src="images/dinner2.jpg"  height="125px"></td>
+	<td><input type="checkbox" id="dinner2" value="70">
+    <label for="dinner2">Sinigang - 70 PHP</label></td>
+	</tr>
+	
+	<tr>
+	<td><img src="images/dinner3.jpg"  height="125px"></td>
+	<td><input type="checkbox" id="dinner3" value="70">
+    <label for="dinner3">Dinuguan - 70 PHP</label></td>
+	</tr>
+	
+	<tr>
+	<td><img src="images/dinner4.jpg"  height="125px"></td>
+	<td><input type="checkbox" id="dinner4" value="60">
+    <label for="dinner4">Laing - 60 PHP</label></td>
+	</tr>
+	
+	<tr>
+	<td><img src="images/dinner5.jpg"  height="125px"></td>
+	<td><input type="checkbox" id="dinner5" value="60">
+    <label for="dinner5">Pinakbet - 60 PHP</label></td>
+	</tr>
+	
+	</table>
+	
+	</div>
+	 <p id="total" style="font-size:25px"></p>
+	 <div>
+  <input type="button" class="button" value="Calculate Total" id="calcButton">
+  </div>
+	<hr>
+	
+	<script>
+
+         
+         function calcTotal()
+         {
+            var itemTotal = 0;
+            var items = document.getElementsByTagName("input");
+            
+
+            for (var i = 0; i < 13; i++)
+            {
+               if (items[i].checked)
+               {
+                  itemTotal += (items[i].value * 1);
+               }
+
+               document.getElementById("total").innerHTML = "Your order total is: " + itemTotal + ".00 PHP";
+               
+            }
+         }
+
+        
+         var calcButton = document.getElementById("calcButton"); 
+         if (calcButton.addEventListener) 
+         {
+            calcButton.addEventListener("click", calcTotal, false); 
+         }
+         else if (calcButton.attachEvent)
+         {
+            calcButton.attachEvent("onclick", calcTotal);   
+         }
+
+function abutton()
+         {
+         	var itemTotal = 0;
+            var items = document.getElementsByTagName("input");
+            
+
+            for (var i = 0; i < 13; i++)
+            {
+               if (items[i].checked)
+               {
+                  itemTotal += (items[i].value * 1);
+               }
+               
+            }
+           var afname = fname.value;
+           document.getElementById("bfname").innerHTML = "Your full name is: " + afname;
+           var aadress = adress.value;
+           document.getElementById("badress").innerHTML = "Your address is: " + aadress;
+           var apayment = payment.value;
+           var change = parseInt(apayment)-itemTotal;
+           document.getElementById("bpayment").innerHTML = "Your payment is: " + parseInt(apayment) + ".00 PHP";
+           document.getElementById("achange").innerHTML = "Your change is: " + change + ".00 PHP";
+         }
+
+</script>
+	
+	
+
+  <div>
+    <label for="fname">Enter Full Name:</label>
+	<input type="text" id="fname" name="fullname" placeholder="Surname, Given Name, MI.">
+	<br>
+	<label for="adress">Enter Address:</label> &nbsp;&nbsp;
+	<input type="text" id="adress" name="address" placeholder="Address">
+	<br>
+	<label for="payment">Enter Payment:</label> &nbsp;&nbsp;
+	<input type="text" id="payment" name="payment" placeholder="Payment">
+	<br>
+ 
+	
+	</form>
+</div>
+
+  <input type="button" class="button" value="Go" onclick="abutton();">
+  <p id="bfname" style="font-size:25px"></p>
+  <p id="badress" style="font-size:25px"></p>
+  <p id="bpayment" style="font-size:25px"></p>
+  <p id="achange" style="font-size:25px"></p>
+
+</body>
+
+</html>
